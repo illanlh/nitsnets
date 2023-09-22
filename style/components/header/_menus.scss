@@ -23,10 +23,11 @@
     
     @include tools.max(1200px) {
         position:absolute;
-        top: tools.toRem(45);
+        top: tools.toRem(112);
+        bottom: 0;
         left: 0;
         width:100%;
-        height: calc(100vh - tools.toRem(116));
+        // height: calc(100vh - tools.toRem(116));
         background-color: colors.$lightgrey2;
         z-index: 999;
         display: none;
@@ -58,6 +59,7 @@
 
         .mobile-menu__access {
             width:100%;
+            margin-top: spaces.$space-3;
             line-height: 0;
             margin-bottom: spaces.$space-4;
             @include tools.configFlex(flex, row, nowrap, center, baseline);
