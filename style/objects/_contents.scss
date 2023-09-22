@@ -1,0 +1,44 @@
+@use '../settings/breakpoints';
+@use '../tools/tools';
+
+div[class^='content'] {
+    width:100%;
+}
+
+// Content x axis
+.content--x-start               {@include tools.configFlex(flex, row, wrap, flex-start, flex-start);}
+.content--x-end                 {@include tools.configFlex(flex, row, wrap, flex-end, flex-start);}
+.content--x-centered            {@include tools.configFlex(flex, row, wrap, center, flex-start);}
+.content--x-between             {@include tools.configFlex(flex, row, wrap, space-between, flex-start);}
+
+// Content y axis
+.content--y-centered            {@include tools.configFlex(flex, row, wrap, flex-start, center);}
+.content--y-end                 {@include tools.configFlex(flex, row, wrap, flex-start, flex-end);}
+
+// Content xy axis
+.content--xy-end                {@include tools.configFlex(flex, row, wrap, flex-end, center);}
+.content--xy-centered           {@include tools.configFlex(flex, row, wrap, center, center);}
+.content--xy-centered-baseline  {@include tools.configFlex(flex, row, wrap, center, baseline);}
+
+.content--xy-between            {@include tools.configFlex(flex, row, wrap, space-between, center);}
+.content--xy-betweenbaseline    {@include tools.configFlex(flex, row, wrap, space-between, baseline);}
+
+// Content nowrap
+.content--x-nowrap              {@include tools.configFlex(flex, row, nowrap, flex-start, flex-start);}
+.content--y-nowrap              {@include tools.configFlex(flex, row, nowrap, flex-start, center);}
+
+// Content column
+.content-column                 {@include tools.configFlex(flex, column, wrap, flex-start, flex-start);}
+
+// Positioners
+.position-relative  {position:relative;}
+.position-absolute  {position:absolute;}
+
+// Displays
+@each $key2, $value in breakpoints.$breakpoints {
+    @media (map-get($value, media)) {
+        .d-#{$key2}-none { display: none !important;} 
+        .d-#{$key2}-flex { display: flex !important;} 
+        .d-#{$key2}-block { display: block !important;}   
+    }  
+}    

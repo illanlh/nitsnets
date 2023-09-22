@@ -1,0 +1,37 @@
+@use '../../settings/spaces';
+@use '../../settings/colors';
+@use '../../tools/tools';
+@use '../../objects/contents';
+@use 'states';
+
+.send-button {
+    @extend .content--xy-centered;
+    @extend %initial;
+
+    padding: spaces.$small-space tools.toRem(20);
+    border-radius: tools.toRem(4);
+    cursor: pointer;
+    font-weight: 500;
+
+    * {
+        font-size: spaces.$basic-space;
+        line-height: 0;
+        color: colors.$black;
+    }
+
+    border: 1px solid colors.$green;
+    color: colors.$white;
+    background-color: colors.$green;   
+
+    @include tools.max(1200px) {width: 100%;}
+    
+}
+
+.send-button:not(.send-button--disabled):hover, .send-button:not(.send-button--disabled):active {
+    background-color: colors.$transparent;
+    color: colors.$green;
+}  
+
+.send-button--disabled {
+    @extend %disabled;
+}

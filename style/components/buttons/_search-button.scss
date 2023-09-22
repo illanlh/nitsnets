@@ -1,0 +1,42 @@
+@use '../../settings/spaces';
+@use '../../settings/colors';
+@use '../../tools/tools';
+@use '../../objects/contents';
+
+%button-border {
+    @extend .content--xy-between;
+
+    padding:  tools.toRem(9) spaces.$space-4 tools.toRem(10) spaces.$basic-space;
+
+    border: 1px solid colors.$lightgrey;
+    border-radius: tools.toRem(6);
+
+    background-color: colors.$white;
+    
+    -webkit-box-shadow: 0 1px 3px 0 rgba(203, 213, 223, 0.5);
+            box-shadow: 0 1px 3px 0 rgba(203, 213, 223, 0.5); // Sombra usada únicamente en este caso. Se recomienda poner en blur radius 3px en lugar de 1 (no se aprecia la sombra)
+    
+    * {
+        font-size: spaces.$basic-space;
+        line-height: 0;
+    }
+    
+}
+
+.search-button {
+    @extend %button-border;
+    width:246px;
+    height: spaces.$space-4;
+    margin-right: spaces.$space-2;
+    font-size: spaces.$small-space;
+
+    background-image: url('../img/icons/icons-outline-icon-search.svg');
+    background-position: calc(100% - spaces.$small-space) 50%;
+    background-repeat: no-repeat;
+    background-size: spaces.$basic-space;
+
+    &::placeholder {color: colors.$midgrey}
+
+    @include tools.max(1200px) {display: none;}
+    
+}

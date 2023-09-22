@@ -1,0 +1,88 @@
+// 1. SETTINGS
+// @use "settings/colors";
+@use "settings/font";
+// @use "settings/spaces"; 
+
+
+// 2. TOOLS
+// @use "tools/tools";
+
+
+// 3. GENERIC
+@use "generic/reset";
+@use "generic/normalize";
+
+
+// 4. ELEMENTS
+@use "elements/header";
+@use "elements/page";
+@use "elements/fonts";
+@use "elements/tables";
+@use "elements/images";
+@use "elements/buttons";
+@use "elements/anchors";
+@use "elements/footer";
+
+
+// 5. OBJECTS
+@use "objects/containers";
+@use "objects/rows";
+@use "objects/cols";
+@use "objects/contents";
+// @use "objects/dividers";
+
+
+// 6. COMPONENTS
+// Header
+@use "components/header/logo-img";
+@use "components/header/menus";
+@use "components/header/promotion-div";
+@use "components/header/submenu";
+
+// Titles
+@use "components/titles/title-sections";
+
+// Buttons
+@use "components/buttons/header-button";
+@use "components/buttons/search-button";
+@use "components/buttons/mail-button";
+@use "components/buttons/send-button";
+@use "components/buttons/buy-button";
+@use "components/buttons/download-button";
+@use "components/buttons/like-button";
+@use "components/buttons/info-button";
+
+// Categories
+@use "components/categories/categories";
+
+// Overlays
+@use "components/overlays/overlay-div";
+
+// Call to action
+@use "components/call-to-action/offer";
+
+// Hero
+@use "components/hero/hero";
+
+// Brands
+@use "components/brands/logo-brands";
+
+// Detailed
+@use "components/detailed/detailed";
+
+// Slider
+@use "components/slider/slider";
+
+// Inputs
+@use "components/inputs/checkbox";
+
+// Footer
+@use "components/footer/lateral-footer";
+@use "components/footer/principal-footer";
+@use "components/footer/footer-mobile";
+@use "components/footer/footer-space";
+@use "components/footer/rrss";
+
+
+// 7. Utilities
+@use "utilities/utilities";

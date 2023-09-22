@@ -1,0 +1,64 @@
+$white: #ffffff;
+$lightgrey: #cbd5e0;
+$lightgrey2: #f5f5f5;
+$midgrey: #a0aec0;
+$grey: #718096;
+$black: #1A202C;
+$darkgrey: #a1abba;
+$yellow: #f1ae03;
+$green: #008b55;
+$lightblue: #edf2f7;
+$transparent: transparent;
+
+
+/*
+
+En caso de hacer un tema reutilizable se podría usar una estructura como esta:
+
+$colors: (
+
+  brand: (
+    primary         : #F42D8C,
+    secondary       : #F42D8C,
+    pink            : #F42D8C,
+    pink            : #F42D8C,
+    pink            : #F42D8C,
+    pink            : #F42D8C,
+    pink            : #F42D8C,
+  ),
+
+  neutral: (
+    black           : #000,
+    white           : #fff,
+    darkest         : #222,
+    darker          : #444,
+    dark            : #666,
+    light           : #999,
+    lighter         : #ccc,
+    lightest        : #f4f4f4
+  ),
+
+  contextual: (
+    success         : #4caf50,
+    success-light   : #c8e6c9,
+    warning         : #ffeb3b,
+    warning-light   : #fff59d,
+    error           : #f44336,
+    error-light     : #ffcdd2,
+    info            : #4b68b3,
+    info-light      : #e5eef9
+  ),
+
+  social: (
+    twitter         : #55acee,
+    facebook        : #32639f,
+    google          : #d34836,
+    pinterest       : #cb2028,
+    instagram       : #517fa4,
+    vimeo           : #1ab7ea,
+    linkedin        : #4875b4,
+    youtube         : #bb0000,
+    tumblr          : #36465D
+  ),
+);
+*/

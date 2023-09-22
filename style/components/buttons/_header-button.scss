@@ -1,0 +1,15 @@
+@use '../../tools/tools';
+@use '../../settings/spaces';
+
+.header-button:not(:last-child):not(#cart) {
+    margin-right: tools.toRem(20);
+}
+
+.header-button:last-child {
+    margin-left: tools.toRem(20);
+}
+
+.header-button img {
+    width: spaces.$space-2;
+    height: spaces.$space-2;
+}

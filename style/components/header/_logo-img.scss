@@ -1,0 +1,15 @@
+@use '../../settings/spaces';
+@use '../../tools/tools';
+
+.logo-img {
+    margin-right: spaces.$space-5;
+
+    @include tools.max(1200px) {
+        margin-right: 0;
+        height: spaces.$space-2;
+    }
+
+    img {
+        height: spaces.$space-4;
+    }
+}

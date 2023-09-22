@@ -1,0 +1,19 @@
+@use '../tools/tools';
+@use '../settings/colors';
+@use '../settings/spaces';
+
+footer {
+    padding-bottom: tools.toRem(68);
+
+    span, a {
+        color: colors.$grey;
+    }
+
+    span {
+        font-size: spaces.$basic-space;
+    }
+
+    a {
+        font-size: spaces.$small-space;
+    }
+}

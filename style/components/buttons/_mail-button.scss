@@ -1,0 +1,18 @@
+@use '../../settings/spaces';
+@use '../../settings/colors';
+@use '../../components/buttons/search-button';
+@use '../../tools/tools';
+
+.mail-button {
+    @extend %button-border;
+    width:100%;
+    height: spaces.$space-5;
+    margin-right: spaces.$minimum-space;
+
+    &::placeholder {color: colors.$midgrey}
+
+    @include tools.max(1200px) {
+        margin-right: 0;
+        margin-bottom: spaces.$basic-space;
+    }
+}

@@ -1,0 +1,12 @@
+@use "../../tools/tools";
+@use "../../settings/spaces";
+
+.title-section--centered {
+    margin-bottom: tools.toRem(68);
+
+    @include tools.max(992px) {
+        margin-bottom: spaces.$space-4;
+    }
+
+}
+.title-section--start {margin-bottom: spaces.$space-2;}

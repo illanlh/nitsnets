@@ -1,0 +1,101 @@
+@use '../../settings/spaces';
+@use '../../objects/contents';
+@use '../../tools/tools';
+@use '../../settings/colors';
+
+.desktop-menu__nav {
+
+    @extend .content--x-start;
+
+    @include tools.max(1200px) {display: none;}
+
+    a {
+        font-weight: 600;
+    }
+}
+
+.desktop-menu__nav a:not(:last-child) {
+    margin-right: spaces.$space-4;
+}
+
+.mobile-menu {
+    @include tools.min(1200px) {display: none !important;}
+    
+    @include tools.max(1200px) {
+        position:absolute;
+        top: tools.toRem(45);
+        left: 0;
+        width:100%;
+        height: calc(100vh - tools.toRem(116));
+        background-color: colors.$lightgrey2;
+        z-index: 999;
+        display: none;
+        opacity: 0;
+        -webkit-animation: mobileMenu 0.3s forwards;
+        animation: mobileMenu 0.3s forwards;
+        -webkit-transform: translateY(-1rem);
+        -ms-transform: translateY(-1rem);
+        transform: translateY(-1rem);
+        overflow-y: auto;
+
+        &.d-xs-flex {
+            @include tools.configFlex(flex, column, nowrap, space-between, flex-start);
+        }
+
+        .mobile-menu__nav {
+            width:100%;
+            padding-top: spaces.$basic-space;
+            @include tools.configFlex(flex, row, wrap, center, stretch);
+
+            a {
+                width:100%;
+                padding-top: spaces.$basic-space;
+                padding-bottom: spaces.$basic-space;
+                @include tools.configFlex(flex, row, nowrap, center, center);
+                font-weight: 600;
+            }
+        }
+
+        .mobile-menu__access {
+            width:100%;
+            line-height: 0;
+            margin-bottom: spaces.$space-4;
+            @include tools.configFlex(flex, row, nowrap, center, baseline);
+
+            .submenu-div__login {
+                border-right: 1px solid colors.$lightgrey;
+                padding-right: spaces.$minimum-space;
+                margin-right: spaces.$minimum-space;
+            }
+        }
+    }
+
+    .mobile-menu__nav {
+        @include tools.min-max(768px, 1200px) {padding-top: tools.toRem(120) !important;}
+    }
+}
+
+@-webkit-keyframes mobileMenu {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-1rem);
+                transform: translateY(-1rem);
+    }
+    100% {
+        opacity: 100;
+        -webkit-transform: translateY(0rem);
+                transform: translateY(0rem);
+    }
+}
+@keyframes mobileMenu {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-1rem);
+                transform: translateY(-1rem);
+    }
+    100% {
+        opacity: 100;
+        -webkit-transform: translateY(0rem);
+                transform: translateY(0rem);
+    }
+}

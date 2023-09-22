@@ -1,0 +1,27 @@
+@use "../../objects/contents";
+@use "../../settings/spaces";
+@use "../../settings/colors";
+
+// Requires a parent div with position relative
+
+.overlay-div {
+    @extend .content--y-end;
+    @extend .position-absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0,0,0,0);
+    padding: spaces.$space-4;
+
+    .overlay-div__title {
+        margin-bottom: spaces.$space-2;
+        display: block;
+        color: colors.$white;
+        font-weight: 600;
+    }
+
+    & > div {
+        height:auto !important;
+    }
+}

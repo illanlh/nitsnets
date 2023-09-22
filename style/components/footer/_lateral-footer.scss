@@ -1,0 +1,73 @@
+@use "../../objects/contents";
+@use "../../settings/spaces";
+@use "../../settings/colors";
+@use "../../tools/tools";
+
+
+.lateral-footer {
+    @include tools.configFlex(flex, column, wrap, flex-start, flex-start);
+
+    @include tools.min-max(576px, 1199px) {
+        margin-bottom: 0 !important;
+    }
+
+    .lateral-footer__content{
+        padding-bottom: spaces.$space-4;
+
+        @include tools.max(1200px) {padding-right: spaces.$space-4; padding-bottom: 0;}
+
+        img:not(:last-child) {
+            margin-right: spaces.$basic-space;
+        }
+
+        .download-text {
+            margin-bottom: spaces.$basic-space;
+            display: block;
+        }
+    }
+
+    &:not(:last-child)  {
+        margin-bottom: spaces.$space-4;
+        border-bottom: 1px solid colors.$lightgrey;
+
+        @include tools.max(1200px) {
+            border-right: 1px solid colors.$lightgrey;
+            border-bottom: none;
+        }
+
+        @include tools.max(575px) {
+            border-right: none;
+            border-bottom: 1px solid colors.$lightgrey;
+        }
+
+        .lateral-footer__content {
+            img {
+                margin-top: spaces.$basic-space;
+                @include tools.max(1200px) {
+                    margin-top: spaces.$space-2;
+                }
+            }
+        }
+
+        .lateral-footer__pay {
+            img {
+                @include tools.max(1200px) {
+                    margin-top: 0;
+                }
+            }
+            
+        }
+    }
+
+    .lateral-footer__pay {
+        margin-top: spaces.$space-4;
+
+        @include tools.max(575px) {
+            margin-bottom: spaces.$space-4;
+        }
+
+        span {
+            font-size: spaces.$small-space;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use '../../tools/tools';
+@use '../../settings/spaces';
+@use '../../objects/contents';
+
+.rrss {
+    @extend .content--x-between;
+
+    img:not(:last-child) {
+        margin-right: tools.toRem(28);
+    }
+}
+
+.copyright {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+
+    @include tools.max(728px) {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+
+        margin-top: spaces.$space-5;
+    }
+}
+
+.rrss {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+
+    @include tools.max(728px) {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+    }
+
+    img {
+        @include tools.max(728px) {
+            width: tools.toRem(28);
+            height: tools.toRem(28);
+        }
+
+        :not(:last-child) {
+            @include tools.max(728px) {
+                margin-right: spaces.$space-4;
+            } 
+        }
+    }
+}

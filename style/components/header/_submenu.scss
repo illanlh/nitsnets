@@ -1,0 +1,50 @@
+@use '../../settings/spaces';
+@use '../../objects/contents';
+@use '../../objects/dividers';
+@use '../../settings/colors';
+@use '../../tools/tools';
+
+
+.submenu-div {
+    @extend .content--x-between;
+    padding-top: spaces.$space-1;
+    padding-bottom: spaces.$space-2;
+}
+
+.submenu-div__questions {
+
+    @extend .content--xy-betweenbaseline;
+
+    > *:not(:last-child) {
+        @extend %divider-between-columns;
+    }
+
+    .submenu-div__text, .submenu-div__info, .submenu-div__help {
+        font-size: spaces.$small-space;
+        color: colors.$grey;
+    }
+
+    .submenu-div__info-text {
+        @extend .content--x-start;
+
+        .submenu-div__text {
+            display: block;
+            margin-right: tools.toRem(8);
+        }
+    }
+
+}
+
+.submenu-div__access {
+
+    @extend .content--x-start;
+
+    > *:not(:last-child) {
+        @extend %divider-between-columns;
+    }
+
+    .submenu-div__login, .submenu-div__register {
+        font-size: spaces.$small-space;
+        color: colors.$grey;
+    }
+}

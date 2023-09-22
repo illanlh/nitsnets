@@ -1,0 +1,38 @@
+@use '../../settings/colors';
+
+.slide-container__like-button {
+
+    svg {
+        stroke: colors.$grey;
+        fill: transparent;
+        cursor: pointer;
+        -webkit-transition:0.3s;
+        -o-transition:0.3s;
+        transition:0.3s;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    &:hover {
+        svg {
+            stroke: colors.$grey;
+            fill: colors.$grey;
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+    }
+
+    &.active {
+
+        svg {
+            stroke: colors.$green;
+            fill: colors.$green;
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+    
+}

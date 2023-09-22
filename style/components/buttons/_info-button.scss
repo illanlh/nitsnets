@@ -1,0 +1,7 @@
+@use '../../settings/colors';
+
+
+.info-button {
+    text-decoration: underline;
+    color: colors.$white;
+}

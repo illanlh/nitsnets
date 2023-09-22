@@ -1,0 +1,25 @@
+@use '../../objects/contents';
+@use '../../settings/spaces';
+
+.footer-button-mobile {
+    @extend .content--xy-between;
+    width: 100%;
+
+    img {
+        width: spaces.$basic-space;
+        height: spaces.$basic-space;
+    }
+
+    .footer-title {
+        margin-bottom: 0;
+    }
+}
+
+.content-column:not(:first-child) .footer-button-mobile {
+    margin-top: spaces.$basic-space;
+}
+
+.footer-link-mobile {
+    display: none;
+    margin-top: spaces.$basic-space;
+}

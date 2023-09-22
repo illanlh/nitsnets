@@ -1,0 +1,41 @@
+@use '../../settings/spaces';
+@use '../../objects/contents';
+@use '../../tools/tools';
+
+.categories {
+    @extend .position-relative;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @include tools.min-max(767px, 1200px) {margin-bottom: spaces.$minimum-space;}
+    @include tools.max(767px) {display: none;}
+}
+
+.categories-mobile {
+    @extend .position-relative;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @include tools.min(767px) {display: none;}
+    @include tools.max(767px) {
+        margin-bottom: spaces.$minimum-space;
+    }
+
+    .overlay-div {
+        @include tools.max(767px) {
+            padding: spaces.$space-4 spaces.$space-2;
+        }
+
+        .overlay-div__title {
+            @include tools.max(767px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

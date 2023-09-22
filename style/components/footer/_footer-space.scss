@@ -1,0 +1,5 @@
+@use '../../tools/tools';
+
+.footer-space {
+    width: tools.toRem(80)
+}

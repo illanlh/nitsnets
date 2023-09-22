@@ -1,0 +1,8 @@
+@use '../settings/colors';
+@use '../settings/spaces';
+
+%divider-between-columns {
+    border-right:1px solid colors.$lightgrey;
+    padding-right: spaces.$minimum-space;
+    margin-right: spaces.$minimum-space;
+}

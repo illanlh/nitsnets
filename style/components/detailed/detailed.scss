@@ -1,0 +1,76 @@
+@use "../../objects/contents";
+@use "../../tools/tools";
+@use "../../settings/spaces";
+@use "../../settings/colors";
+
+.detailed {
+    @include tools.configFlex(flex, row, wrap, space-between, stretch);
+
+    @include tools.min-max(768px, 1200px) {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;  
+         
+        max-width: 580px;
+        margin: 0 auto;
+    }
+
+    .horizontal-divider {
+        border-right: 1px solid colors.$lightgrey;
+
+        @include tools.min-max(768px, 1200px) {
+            display: none;
+        }
+
+        @include tools.max(768px) {display: none;}
+    }
+
+    .detailed-div {
+        @extend .content--y-centered;
+
+        @include tools.min-max(768px, 1200px) {
+            width:auto;
+            border-bottom: 1px solid colors.$lightgrey;
+            padding-bottom: spaces.$space-2;
+        }
+        @include tools.max(768px) {
+            width:100%;
+            border-bottom: 1px solid colors.$lightgrey;
+            padding-bottom: spaces.$space-2;
+        }
+
+        &:not(:nth-child(5)), &:not(:nth-child(7)) {
+            @include tools.min-max(768px, 1200px) {
+                margin-bottom: spaces.$space-3;
+            }
+        }
+        
+        &:not(:last-child) {
+            @include tools.max(768px) {
+                margin-bottom: spaces.$space-2;
+            }
+        }
+        
+    }
+    
+    .detailed-div__info {
+        @include tools.configFlex(flex, column, wrap, flex-start, flex-start);
+        
+        .detailed-div__secondary{
+            font-size: spaces.$small-space;
+            line-height: tools.toRem(22);
+            color: colors.$grey;
+        }
+
+        .detailed-div__principal {
+            font-weight: 600;
+        }
+    }
+    
+    .detailed-div__icon {
+        width: tools.toRem(34);
+        height: tools.toRem(34);
+        margin-right: spaces.$basic-space;
+    }
+    
+}

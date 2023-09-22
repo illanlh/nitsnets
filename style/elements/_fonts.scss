@@ -1,0 +1,31 @@
+@use "../settings/spaces";
+@use "../tools/tools";
+
+*,
+*::before,
+*::after {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-size: spaces.$space-4;
+    font-weight: 800;
+    line-height: normal;
+
+    @include tools.max(576px) {font-size: spaces.$space-3;}
+}
+
+h2 {
+    font-size: spaces.$space-2;
+    font-weight: 800;
+
+    @include tools.max(576px) {font-size: tools.toRem(20)}
+}
+
+p {font-size: spaces.$basic-space; line-height: normal;}
+
+section {
+    margin-bottom: tools.toRem(120);
+
+    @include tools.max(1200px) {margin-bottom: tools.toRem(76);}
+}

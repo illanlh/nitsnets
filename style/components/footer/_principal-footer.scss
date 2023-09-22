@@ -1,0 +1,19 @@
+@use "../../settings/spaces";
+@use "../../settings/colors";
+
+.footer-title {
+    font-size: spaces.$small-space;
+    font-weight: 600;
+    margin-bottom: spaces.$space-2;
+    color: colors.$black;
+}
+
+.footer-link:not(:last-child) {    
+    margin-bottom: spaces.$basic-space;
+}
+
+footer .horizontal-divider {
+    border-bottom:1px solid colors.$lightgrey;
+    margin: spaces.$space-4 0; 
+    width:100%;
+}

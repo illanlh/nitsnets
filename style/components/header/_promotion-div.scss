@@ -1,0 +1,84 @@
+@use '../../settings/colors';
+@use '../../settings/spaces';
+@use '../../tools/tools';
+@use '../../objects/contents';
+
+.promotion-div {
+    background-color: colors.$black;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+
+    &.closing {
+        -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    @include tools.max(1200px) {
+        margin-bottom: tools.toRem(22);
+        padding: 0;
+    }
+
+    // CLOSE PROMOTION
+    .promotion-div__close {
+        @extend .content--xy-end;
+        @extend .position-absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    .promotion-div__icon {
+        width: spaces.$space-2;
+        height: spaces.$space-2;
+
+        @include tools.max(1200px) {
+            display: none;
+        }
+    }
+    // 
+}
+
+// PROMOTION
+.promotion-div__container {
+    @extend .content--xy-centered-baseline;
+    padding-top: tools.toRem(13);
+    padding-bottom: tools.toRem(15);
+    color: colors.$white;
+
+    span {
+        font-size: spaces.$basic-space;
+    }
+
+    img {
+        width: spaces.$small-space;
+        height: spaces.$small-space;
+    }
+
+    .promotion-div__claim {
+        font-weight: 300;
+        text-align: center;
+        line-height: normal;
+
+        & > span {
+            margin-right: tools.toRem(8);
+        }
+
+        .promotion-div__preclaim {
+            @include tools.max(413px) {
+                display: none;
+            }
+        }
+    }
+
+    .promotion-div__link {
+        line-height: 0;
+        display: inline-block;
+
+        .promotion-div__info {
+            font-weight: 600;
+        }
+    }
+}

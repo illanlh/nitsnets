@@ -1,0 +1,9 @@
+@use '../settings/spaces';
+@use '../tools/tools';
+
+header {
+    width: 100%;
+    padding-bottom: spaces.$space-4;
+
+    @include tools.max(1200px) {padding-bottom: tools.toRem(22);}
+}

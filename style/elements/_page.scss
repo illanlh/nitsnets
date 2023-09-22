@@ -1,0 +1,11 @@
+html {
+    min-height: 100%;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+html.noscroll {
+    overflow-y: hidden;
+}

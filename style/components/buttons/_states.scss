@@ -1,0 +1,10 @@
+%initial {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+%disabled {
+    opacity: 0.2;
+    cursor: not-allowed !important;
+}

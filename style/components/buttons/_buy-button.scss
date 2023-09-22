@@ -1,0 +1,31 @@
+@use '../../settings/spaces';
+@use '../../settings/colors';
+@use '../../tools/tools';
+@use '../../objects/contents';
+@use 'states';
+
+.buy-button {
+    @extend .content--xy-centered;
+    @extend %initial;
+
+    padding: spaces.$small-space spaces.$space-5;
+    border: 1px solid colors.$white;
+    border-radius: tools.toRem(4);
+    background-color: colors.$white;
+    font-weight: 500;
+    
+    * {
+        font-size: spaces.$basic-space;
+        line-height: 0;
+        color: colors.$black;
+    }
+
+    &:not(.buy-button--disabled):hover, &:not(.buy-button--disabled):active {
+        background-color: colors.$transparent;
+        color: colors.$white;
+    }    
+}
+
+.buy-button--disabled {
+    @extend %disabled;
+}

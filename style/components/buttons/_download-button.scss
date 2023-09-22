@@ -1,0 +1,40 @@
+@use '../../settings/spaces';
+@use '../../settings/colors';
+@use '../../tools/tools';
+@use '../../objects/contents';
+@use 'states';
+
+
+.download-button {
+    @extend .content--xy-centered;
+    @extend %initial;
+
+    padding: spaces.$small-space tools.toRem(20);
+    border-radius: tools.toRem(4);
+    cursor: pointer;
+    font-weight: 500;
+
+    * {
+        font-size: spaces.$basic-space;
+        line-height: 0;
+        color: colors.$black;
+    }
+
+    border: 1px solid colors.$black;
+    color: colors.$white;
+    background-color: colors.$black;   
+
+    display: inline-block;
+    background-color: colors.$black;  
+
+}
+
+.download-button:not(.download-button--disabled):hover, .download-button:not(.download-button--disabled):active {
+    background-color: colors.$transparent;
+    color: colors.$black;
+    border: 1px solid colors.$black;
+} 
+
+.download-button--disabled {
+    @extend %disabled;
+}

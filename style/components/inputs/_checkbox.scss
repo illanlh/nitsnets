@@ -1,0 +1,139 @@
+@use '../../settings/colors';
+@use '../../tools/tools';
+@use '../../objects/contents';
+@use '../../settings/spaces';
+
+/* Checkbox */
+label .custom_check {
+    display: block;
+    @extend .position-relative;
+    padding-left: 0;
+    margin-left: tools.toRem(15);
+    margin-bottom: spaces.$minimum-space;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer !important;
+    font-size:inherit;
+}
+
+.custom_check a {display: inline-block;}
+
+/* Hide the browser's default checkbox */
+.custom_check input {
+    @extend .position-absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    cursor: pointer !important;
+}
+
+.custom_check_text {
+    padding-left: spaces.$space-2; 
+    cursor: pointer !important; 
+    font-size:inherit; 
+    margin-bottom: 0; 
+    line-height: normal; 
+    font-size: spaces.$small-space; 
+    display: block; 
+    color: colors.$darkgrey;}
+
+@media all and (-ms-high-contrast:none) {
+    .custom_check_text {
+        line-height:1.55rem; /* IE10 */
+    } 
+    *::-ms-backdrop, .custom_check_text {
+        line-height:1.55rem; /* IE11 */
+    } 
+}
+
+/* Create a custom checkbox */
+.checkmark_2 {
+    @extend .position-absolute;
+    top: tools.toRem(4.5);
+    left: 0;
+    height: spaces.$basic-space;
+    width: spaces.$basic-space;
+    background-color: colors.$black; 
+    border:1px solid colors.$white; 
+    border-radius: tools.toRem(4);
+    cursor: pointer !important;
+    transition:0.3s;
+}
+
+/* On mouse-over, add a grey background color */
+.custom_check:hover input ~ .checkmark_2 {
+    background-color: colors.$black; 
+    border:1px solid colors.$white; 
+    border-radius: tools.toRem(4); 
+    transition: 0.3s;
+}
+
+/* When the checkbox is checked, add a black background */
+.custom_check input:checked ~ .checkmark_2 {
+    background-color: colors.$black;
+    border:1px solid colors.$white;
+    border-radius: tools.toRem(4);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark_2:after {
+    content: ""; 
+    @extend .position-absolute; 
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom_check input:checked ~ .checkmark_2:after {
+    display: block;
+    transform:rotate(45deg);
+}
+
+/* Style the checkmark/indicator */
+.custom_check .checkmark_2:after {
+    left: tools.toRem(4);
+    top: tools.toRem(2);
+    width: tools.toRem(5);
+    height: tools.toRem(9);
+    border: solid white;
+    border-width: 0 tools.toRem(2) tools.toRem(2) 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Checkbox General Desactivado */
+[data-editable="false"] .custom_check {
+    opacity: 0.4 !important; 
+    cursor:not-allowed !important;
+}
+[data-editable="false"] .custom_check .custom_check_text, [data-editable="false"] .custom_check span {
+    cursor:not-allowed !important;
+}
+
+.custom_check[data-editable="false"] {
+    opacity: 0.4 !important;
+    cursor: default;
+}
+.custom_check[data-editable="false"] input {
+    cursor: default;
+}
+
+[data-editable="false"] input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* Checkbox 2 Desactivado (Necesario) */
+[data-editable="false"] input ~ .checkmark_2 {
+    background-color: #ccc;
+}
+[data-editable="false"] input:checked ~ .checkmark_2 {
+    background-color: #ccc !important;
+}
+[data-editable="false"]:hover input ~ .checkmark_2 {
+    background-color: #ccc !important;
+}
+

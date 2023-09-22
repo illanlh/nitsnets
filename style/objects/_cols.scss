@@ -1,0 +1,31 @@
+@use '../settings/spaces';
+@use '../settings/breakpoints';
+
+div[class^='col'] {
+    position: relative;
+    // border: 1px solid red;
+    padding-left: spaces.$mid-space;
+    padding-right: spaces.$mid-space;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+
+// Special cases
+
+@each $key2, $value in breakpoints.$breakpoints {
+    @media (map-get($value, media)) {
+        @for $cols from 1 through 12 {
+            .col-#{$key2}-#{$cols} { width: calc(($cols * 100) / 12) * 1%;}  
+        }
+        .col-#{$key2} { 
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%;
+        } 
+        .col-#{$key2}-auto {
+            width: auto;
+        }
+    }  
+}    

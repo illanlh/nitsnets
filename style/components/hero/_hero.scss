@@ -1,0 +1,64 @@
+@use "../../settings/spaces";
+@use '../../settings/colors';
+@use '../../objects/contents';
+@use '../../tools/tools';
+
+// Background must be added at container-fluid
+.hero-background {
+     background-size: cover;
+     background-repeat: no-repeat;
+
+     @include tools.max(576px) {
+        padding-right: 0;
+        padding-left: 0;
+     }
+
+     .container {
+        @include tools.max(576px) {
+            margin-right: spaces.$space-2;
+            margin-left: spaces.$space-2;
+        }
+     }
+}
+
+.hero-background--1 {
+    background-image: url('../img/hero/ig-1.jpg');
+
+    @include tools.max(1200px) {
+        background-position: 15% 0%;
+    }
+}
+.hero-background--2 {
+    background-image: url('../img/hero/ig-2.jpg');
+
+    @include tools.max(1200px) {
+        background-position: 55% 0%;
+    }
+}
+
+.hero-claim {
+
+    height:81vh;
+
+    @extend .content--y-centered;
+    align-content: center;
+
+    @include tools.max(1200px) {
+        height: 70vh;
+        align-content: flex-end;
+        padding-bottom: spaces.$space-4;
+    }
+        
+
+    .hero-claim__title {
+        color: colors.$white;
+        margin-bottom: spaces.$minimum-space;
+        margin-top: 0;
+    }
+
+    .hero-claim__p {
+        color: colors.$white;
+        margin-bottom: spaces.$space-4;
+        width:100%;
+    }
+}

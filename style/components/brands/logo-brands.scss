@@ -1,0 +1,33 @@
+@use '../../objects/contents';
+@use '../../settings/spaces';
+@use '../../settings/colors';
+@use '../../tools/tools';
+@use '../../settings/breakpoints';
+
+.logo-brands {
+    @extend .content--xy-centered;
+    height: spaces.$space-5;
+    border-radius: tools.toRem(6);
+
+    &:hover {
+        background-color: colors.$lightblue;
+    }
+
+    @include tools.max(992px) {margin-bottom: spaces.$space-3;}
+}
+
+.more-brands {
+    font-weight: 600;
+
+    img {
+        width: spaces.$basic-space;
+        height: spaces.$basic-space;
+    }
+
+    span {
+        font-size: spaces.$small-space;
+    }
+    
+    @include tools.max(576px) {margin-top: spaces.$small-space;}
+    @include tools.min-max(576px, 992px) {margin-top: spaces.$space-2;}
+}

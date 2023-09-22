@@ -1,0 +1,16 @@
+@use "../tools/tools";
+
+// Common reticular spaces used on the styles
+// px units recalculated as rem
+
+$minimum-space: tools.toRem(12);
+$small-space: tools.toRem(14);
+
+$mid-space: tools.toRem(8);
+$basic-space: tools.toRem(16);
+
+$space-1: tools.toRem(18);
+$space-2: tools.toRem(24);
+$space-3: tools.toRem(30);
+$space-4: tools.toRem(36);
+$space-5: tools.toRem(48);

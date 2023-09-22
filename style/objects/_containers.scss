@@ -1,0 +1,25 @@
+@use '../settings/spaces';
+@use '../tools/tools';
+
+$container-width: 1318px !default; // Enunciado a 1366, -24px de cada lado sobre el que se sostienen los márgenes laterales visualmente
+$container-margin: $container-width + 30;
+
+.container {
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: $container-width;
+  position: relative;
+
+  @include tools.max($container-margin) {
+    margin-right: spaces.$basic-space;
+    margin-left: spaces.$basic-space;
+  }
+}
+
+.container-fluid {
+  padding-left: spaces.$mid-space;
+  padding-right: spaces.$mid-space;
+  margin-right: 0;
+  margin-left:  0;
+  width: 100%;
+}
