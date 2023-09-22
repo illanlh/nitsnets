@@ -1,0 +1,24 @@
+{
+  "name": "prueba-nitsnets",
+  "version": "1.0.1",
+  "description": "Elaboración de landing para prueba en SASS y con Gulp.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illanlh/nitsnets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/illanlh/nitsnets/issues"
+  },
+  "homepage": "https://github.com/illanlh/nitsnets#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0"
+  }
+}
