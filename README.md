@@ -13,5 +13,6 @@ Se interpretan las marcas destacadas como enlace y el fondo de reebok como efect
 
 # Posibles mejoras:
 Aplicar la carga de los slider al rescalar la ventana (en lugar de al cargar la página).
+Incluir las librerías externas en los archivos en lugar de referenciar los CDN.
 Incluir los estilos del plugin slick en la estructura sass.
-Añadir las imágenes que se cortan en el diseño (en lugar de repetir imágenes anteriores)
+Añadir las imágenes que se cortan en el diseño (en lugar de repetir imágenes anteriores).
